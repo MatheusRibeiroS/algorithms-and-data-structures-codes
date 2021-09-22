@@ -1,0 +1,20 @@
+/*
+  Matheus dos Santos Ribeiro Silva
+  URI 1001 - "Extremely Basic"
+  21/09/2021
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+  int A, B, X;
+
+  cin >> A >> B;
+
+  cout << "X = " << A + B << endl;
+
+  return 0;
+}
