@@ -1,6 +1,6 @@
 /*
   Matheus dos Santos Ribeiro Silva
-  URI 1001 - "Extremely Basic"
+  BEE 1000 - "Hello World!"
   21/09/2021
 */
 
@@ -10,11 +10,8 @@ using namespace std;
 
 int main() {
 
-  int A, B;
+    cout << "Hello World!" << endl;
 
-  cin >> A >> B;
-
-  cout << "X = " << A + B << endl;
-
-  return 0;
+    return 0;
 }
+

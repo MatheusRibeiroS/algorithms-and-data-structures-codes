@@ -1,6 +1,6 @@
 /*
   Matheus dos Santos Ribeiro Silva
-  URI 1002 - "Area of a Circle"
+  BEE 1011 - "Sphere"
   27/09/2021
 */
 
@@ -11,13 +11,15 @@ using namespace std;
 
 int main() {
 
-  double radius;
+  int radius;
   const double PI = 3.14159;
 
   cin >> radius;
 
-  cout << fixed << setprecision(4);
-  cout << "A=" << PI*(radius*radius) << endl;
+  cout << fixed << setprecision(3);
+
+  cout << "VOLUME = " << (4.0/3.0) * PI * radius * radius * radius << endl;
 
   return 0;
 }
+

@@ -1,6 +1,6 @@
 /*
   Matheus dos Santos Ribeiro Silva
-  URI 1006 - "Average 2"
+  BEE 1006 - "Average 2"
   27/09/2021
 */
 

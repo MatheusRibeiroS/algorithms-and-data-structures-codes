@@ -1,6 +1,6 @@
 /*
   Matheus dos Santos Ribeiro Silva
-  URI 2606 - "Categories"
+  BEE 2606 - "Categories"
   13/01/2022
 */
 

@@ -1,6 +1,6 @@
 /*
   Matheus dos Santos Ribeiro Silva
-  URI 1010 - "Simple Calculate"
+  BEE 1010 - "Simple Calculate"
   27/09/2021
 */
 

@@ -1,6 +1,6 @@
 /*
   Matheus dos Santos Ribeiro Silva
-  URI 1003 - "Simple Sum"
+  BEE 1004 - "Simple Product"
   27/09/2021
 */
 
@@ -10,11 +10,11 @@ using namespace std;
 
 int main() {
 
-  int A, B;
+  int a, b;
 
-  cin  >> A >> B;
+  cin >> a >> b;
 
-  cout << "SOMA = " << (A + B) << endl;
+  cout << "PROD = " << (a * b) << endl;
 
   return 0;
 }
