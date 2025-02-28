@@ -26,8 +26,6 @@ class Result {
         }
         return totalValue;
     }
-
-
 }
 
 public class VeryBigSum {

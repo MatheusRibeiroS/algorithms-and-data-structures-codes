@@ -13,37 +13,26 @@ import static java.util.stream.Collectors.toList;
 class Result {
 
     /*
-     * Complete the 'compareTriplets' function below.
+     * Complete the 'diagonalDifference' function below.
      *
-     * The function is expected to return an INTEGER_ARRAY.
-     * The function accepts following parameters:
-     *  1. INTEGER_ARRAY a
-     *  2. INTEGER_ARRAY b
+     * The function is expected to return an INTEGER.
+     * The function accepts 2D_INTEGER_ARRAY arr as parameter.
      */
 
-    public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
+    public static int diagonalDifference(List<List<Integer>> arr) {
 
-        int aPoints = 0;
-        int bPoints = 0;
+        int n = arr.size();
+        int leftDiagonal = 0;
+        int rightDiagonal = 0;
 
-        for(int i = 0; i < a.size(); i++) {
-            if (a.get(i) == b.get(i)) {
-                continue;
-            } else if (a.get(i) > b.get(i)) {
-                aPoints += 1;
-            } else if (a.get(i) < b.get(i)) {
-                bPoints += 1;
-            }
+        for(int i = 0; i < n; i++) {
+            rightDiagonal += arr.get(i).get(i);
+            leftDiagonal += arr.get(i).get(n - i - 1);
         }
 
-        List<Integer> points = new ArrayList<Integer>();
-
-        points.add(0, aPoints);
-        points.add(1, bPoints);
-
-
-        return points;
+        return Math.abs(rightDiagonal - leftDiagonal);
     }
+
 }
 
 public class DiagonalDifference {
@@ -51,22 +40,26 @@ public class DiagonalDifference {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        List<Integer> a = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
-                .map(Integer::parseInt)
-                .collect(toList());
+        int n = Integer.parseInt(bufferedReader.readLine().trim());
 
-        List<Integer> b = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
-                .map(Integer::parseInt)
-                .collect(toList());
+        List<List<Integer>> arr = new ArrayList<>();
 
-        List<Integer> result = Result.compareTriplets(a, b);
+        IntStream.range(0, n).forEach(i -> {
+            try {
+                arr.add(
+                        Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+                                .map(Integer::parseInt)
+                                .collect(toList())
+                );
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
 
-        bufferedWriter.write(
-                result.stream()
-                        .map(Object::toString)
-                        .collect(joining(" "))
-                        + "\n"
-        );
+        int result = Result.diagonalDifference(arr);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
 
         bufferedReader.close();
         bufferedWriter.close();
